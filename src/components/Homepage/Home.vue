@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
+const resumeUrl = new URL('@/assets/PDF/MuhdIdlan_Resume.pdf', import.meta.url).href
+
 const socialLinks = [
   { name: 'Instagram', href: 'https://instagram.com', src: new URL('@/assets/icon/ig.svg', import.meta.url).href },
   { name: 'Facebook', href: 'https://facebook.com', src: new URL('@/assets/icon/fb.svg', import.meta.url).href },
@@ -88,11 +90,15 @@ onBeforeUnmount(() => {
 
                     <div class="flex flex-col pt-8 lg:pt-0 gap-4 lg:gap-0 lg:flex-row items-center justify-between"> 
                         <div class="flex items-center gap-4">
-                            <button class="flex w-full lg:w-auto justify-center cursor-pointer px-6 py-2 bg-[#4e4539] text-white rounded-full hover:bg-[#5e5850] hover:text-white transition-colors">
+                            <a
+                              :href="resumeUrl"
+                              download="MuhdIdlan_Resume.pdf"
+                              class="flex w-full lg:w-auto justify-center cursor-pointer px-6 py-2 bg-[#4e4539] text-white rounded-full hover:bg-[#5e5850] hover:text-white transition-colors"
+                            >
                             Download CV
 
                             <img src="@/assets/image/cv.png" alt="Arrow Right" class="ml-2 h-6 w-6 invert" />
-                            </button>
+                            </a>
                         </div>
                         <div class="flex items-center justify-end gap-2 text-end text-[16px] leading-relaxed">
                             <span>23 years old, from Malaysia</span>
