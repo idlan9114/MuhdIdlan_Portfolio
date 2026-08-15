@@ -10,11 +10,6 @@
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
 
-    <!--
-      Static duplicate of the Contact form so Netlify's build-time bot can
-      detect it (it only scans the built HTML, not the Vue-rendered DOM).
-      Never shown to visitors; the real form in Contact.vue submits to it.
-    -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />

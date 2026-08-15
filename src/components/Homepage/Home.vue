@@ -4,10 +4,10 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 const resumeUrl = new URL('@/assets/PDF/MuhdIdlan_Resume.pdf', import.meta.url).href
 
 const socialLinks = [
-  { name: 'Instagram', href: 'https://instagram.com', src: new URL('@/assets/icon/ig.svg', import.meta.url).href },
-  { name: 'Facebook', href: 'https://facebook.com', src: new URL('@/assets/icon/fb.svg', import.meta.url).href },
-  { name: 'LinkedIn', href: 'https://linkedin.com', src: new URL('@/assets/icon/linkedin.svg', import.meta.url).href },
-  { name: 'GitHub', href: 'https://github.com', src: new URL('@/assets/icon/github.svg', import.meta.url).href },
+  { name: 'Instagram', href: 'https://www-fallback.instagram.com/iidlann._.n/', src: new URL('@/assets/icon/ig.svg', import.meta.url).href },
+  { name: 'Facebook', href: 'https://www.facebook.com/idlan.idris.9', src: new URL('@/assets/icon/fb.svg', import.meta.url).href },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/muhammad-idlan-bin-idris-47ba40264/', src: new URL('@/assets/icon/linkedin.svg', import.meta.url).href },
+  { name: 'GitHub', href: 'https://github.com/idlan9114', src: new URL('@/assets/icon/github.svg', import.meta.url).href },
 ]
 
 function getMalaysiaTime() {

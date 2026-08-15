@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
                 </div>
                 <div class="text-center lg:text-start text-white text-[16px] gap-4 mt-6 flex flex-col gap-8">
                     <div>
-                    I am currently pursuing a Bachelor of Computer Science with a specialization in Graphics & Multimedia Technology. I have a strong interest in virtual reality, game development and interactive visual design with hands-on experience in transforming creative ideas into functional systems and engaging digital experiences.
+                    I am a graduated student from UMPSA in course Bachelor of Computer Science with a specialization in Graphics & Multimedia Technology. I have a strong interest in virtual reality, game development and interactive visual design with hands-on experience in transforming creative ideas into functional systems and engaging digital experiences.
                     </div>
                     <div>
                     In addition to programming, I actively develop my design skills using Adobe Photoshop and Illustrator, allowing me to produce visually polished and user-focused projects. I am eager to apply my technical and creative abilities in a practical internship environment and contribute to real-world projects.
