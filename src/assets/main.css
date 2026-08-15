@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+@import './base.css' layer(base);
+
+@theme {
+  /* Project convention: unprefixed utilities are mobile/base, lg: is desktop. */
+  --breakpoint-lg: 64rem;
+}
+
+:root {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #111111;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111111;
+}
+
+.container {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}

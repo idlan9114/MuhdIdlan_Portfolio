@@ -1,0 +1,51 @@
+.intro-line {
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 30px;
+  color: #858483;
+}
+
+.word-switch {
+  position: relative;
+  display: inline-block;
+  min-width: 175px;
+  height: 1.5em;
+  color: #63594b;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.word-switch span {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: rotateWords 12s infinite;
+}
+
+.word-switch span:nth-child(1) { animation-delay: 0s; }
+.word-switch span:nth-child(2) { animation-delay: 3s; }
+.word-switch span:nth-child(3) { animation-delay: 6s; }
+.word-switch span:nth-child(4) { animation-delay: 9s; }
+
+@keyframes rotateWords {
+  0%, 20% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  25%, 45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50%, 100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.intro-more {
+  margin-top: 10px;
+  color: #858483;
+  font-size: 1rem;
+  line-height: 1.6;
+}

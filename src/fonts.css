@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Archivo Black', 'Arial Black', sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
