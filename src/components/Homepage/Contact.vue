@@ -16,7 +16,7 @@ const submitStatus = ref<SubmitStatus>('idle')
 
 const encodeFormData = (data: Record<string, string>) =>
   Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key] ?? '')}`)
     .join('&')
 
 const handleSubmit = async () => {
