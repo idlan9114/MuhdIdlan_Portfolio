@@ -22,7 +22,7 @@
       <button
         @click="open = !open"
         aria-label="Toggle menu"
-        class="lg:hidden fixed top-4 right-4 z-50 inline-flex items-center justify-center p-2 rounded-md bg-[#4e4539] text-white"
+        class="lg:hidden fixed top-3 right-4 z-50 inline-flex items-center justify-center p-2 rounded-md bg-[#4e4539] text-white"
       >
         <svg v-if="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
