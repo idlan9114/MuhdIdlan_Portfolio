@@ -230,7 +230,7 @@ onUnmounted(() => {
         <button
           @click="prevProject"
           :disabled="isAnimating"
-          class="absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-x-8 -translate-y-1/2
+          class="hidden lg:flex absolute left-2 top-1/2 z-10 h-10 w-10 -translate-x-8 -translate-y-1/2
             items-center justify-center rounded-full bg-black text-white transition-colors
             hover:bg-gray-800 disabled:cursor-default disabled:hover:bg-black lg:-translate-x-16 lg:left-0"
           aria-label="Previous project"
@@ -241,7 +241,7 @@ onUnmounted(() => {
         <button
           @click="nextProject"
           :disabled="isAnimating"
-          class="absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 translate-x-8
+          class="hidden lg:flex absolute right-2 top-1/2 z-10 h-10 w-10 -translate-y-1/2 translate-x-8
             items-center justify-center rounded-full bg-black text-white transition-colors
             hover:bg-gray-800 disabled:cursor-default disabled:hover:bg-black lg:right-0 lg:translate-x-16"
           aria-label="Next project"
