@@ -267,7 +267,7 @@ onUnmounted(() => {
           to="/project"
           class="inline-block rounded-full border border-[#5e5850] bg-white px-8 py-3 text-sm
             font-semibold text-[#4e4539] shadow-[0_18px_32px_rgba(0,0,0,0.14)] transition
-            duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-[#4e4539] hover:text-white"
+            duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-[#887d6f] hover:text-white"
         >
           More Project
         </router-link>

@@ -6,7 +6,7 @@ import './card.css'
 import './fonts.css'
 import './home.css'
 
-const musicCoverArt = new URL('@/assets/image/Slider_Image/Music.png', import.meta.url).href
+const musicCoverArt = new URL('@/assets/image/PR.jpg', import.meta.url).href
 </script>
 
 <template>
