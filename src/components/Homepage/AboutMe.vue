@@ -56,8 +56,10 @@ onBeforeUnmount(() => {
             <div>
                 <img
                     :ref="setImageRef"
-                    src="@/assets/image/About_me.jpg"
+                    src="@/assets/image-optimized/About_me.webp"
                     alt="About Me"
+                    loading="lazy"
+                    decoding="async"
                     class="fade-in-top object-cover rounded-full w-full h-full object-[10%_center]"
                 />
             </div>

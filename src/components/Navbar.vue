@@ -2,7 +2,7 @@
   <header class="bg-[#ecebeb]/90 backdrop-blur-sm">
     <nav class="container flex items-center justify-between py-3">
       <router-link :to="{ path: '/', hash: '#home' }" class="flex items-center gap-3">
-        <img src="@/assets/image/Logo.png" alt="Logo" class="w-10 h-10" />
+        <img src="@/assets/image-optimized/Logo.webp" alt="Logo" class="w-10 h-10" />
       </router-link>
 
       <!-- Desktop links -->

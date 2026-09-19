@@ -11,14 +11,14 @@ interface HobbyPhoto {
 }
 
 const photos: HobbyPhoto[] = [
-  { id: '1', url: new URL('@/assets/image/Hobby/Hiking/Hike (2).JPG', import.meta.url).href, alt: 'Hike1', class: 'col-span-2 row-span-2' },
-  { id: '2', url: new URL('@/assets/image/Hobby/Hiking/Hike (10).jpg', import.meta.url).href, alt: 'Darwisy Blur', class: 'col-span-1 row-span-2' },
-  { id: '3', url: new URL('@/assets/image/Hobby/Hiking/Hike (6).jpg', import.meta.url).href, alt: 'Self', class: 'col-span-1 row-span-1' },
-  { id: '4', url: new URL('@/assets/image/Hobby/Hiking/Hike (1).jpg', import.meta.url).href, alt: 'Evening', class: 'col-span-1 row-span-2' },
+  { id: '1', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (2).webp', import.meta.url).href, alt: 'Hike1', class: 'col-span-2 row-span-2' },
+  { id: '2', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (10).webp', import.meta.url).href, alt: 'Darwisy Blur', class: 'col-span-1 row-span-2' },
+  { id: '3', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (6).webp', import.meta.url).href, alt: 'Self', class: 'col-span-1 row-span-1' },
+  { id: '4', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (1).webp', import.meta.url).href, alt: 'Evening', class: 'col-span-1 row-span-2' },
   { id: '5', url: new URL('@/assets/image/Hobby/Hiking/Dance.MP4', import.meta.url).href, alt: 'Draw15', class: 'col-span-1 row-span-1', type: 'video' },
-  { id: '6', url: new URL('@/assets/image/Hobby/Hiking/Hike (9).jpg', import.meta.url).href, alt: 'Hike8', class: 'col-span-2 row-span-2' },
-  { id: '7', url: new URL('@/assets/image/Hobby/Hiking/Hike (11).jpg', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
-  { id: '8', url: new URL('@/assets/image/Hobby/Hiking/Hike (12).jpg', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
+  { id: '6', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (9).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-2 row-span-2' },
+  { id: '7', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (11).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
+  { id: '8', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (12).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
 ]
 
 const STAGGER_MS = 150
@@ -88,6 +88,7 @@ onBeforeUnmount(() => {
             :src="photo.url"
             :alt="photo.alt"
             loading="lazy"
+            decoding="async"
             class="h-full w-full object-cover transition duration-300 ease-in-out hover:scale-[1.05]"
           />
         </div>

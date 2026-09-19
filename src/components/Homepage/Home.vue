@@ -45,7 +45,7 @@ onBeforeUnmount(() => {
             <div class="flex w-full lg:w-1/2 items-center justify-center h-auto lg:h-[500px]">
                 <div class="bg-black w-full rounded-[60px] overflow-hidden h-auto lg:h-[500px]">
                     <div>
-                    <img src="@/assets/image/Self.png" alt="Profile Picture" class="object-cover rounded-[60px] w-full h-auto lg:h-[500px]" />
+                    <img src="@/assets/image-optimized/Self.webp" alt="Profile Picture" fetchpriority="high" decoding="async" class="object-cover rounded-[60px] w-full h-auto lg:h-[500px]" />
                     </div>
                 </div>
                 </div>
@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
                             >
                             Download CV
 
-                            <img src="@/assets/image/cv.png" alt="Arrow Right" class="ml-2 h-6 w-6 invert" />
+                            <img src="@/assets/image-optimized/cv.webp" alt="Arrow Right" class="ml-2 h-6 w-6 invert" />
                             </a>
                         </div>
                         <div class="flex items-center justify-end gap-2 text-end text-[16px] leading-relaxed">

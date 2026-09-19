@@ -52,7 +52,7 @@ const goToProject = (project: Project) => {
           class="flex flex-col overflow-hidden rounded-lg bg-white shadow-lg"
         >
           <div class="relative h-56 overflow-hidden bg-gray-200">
-            <img :src="project.image" :alt="project.title" class="h-full w-full object-cover" />
+            <img :src="project.image" :alt="project.title" loading="lazy" decoding="async" class="h-full w-full object-cover" />
           </div>
 
           <div class="flex grow flex-col p-6">

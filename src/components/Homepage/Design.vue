@@ -5,17 +5,17 @@ interface CarouselImage {
   url: string
 }
 
-const modelImage = new URL('@/assets/image/model.png', import.meta.url).href
+const modelImage = new URL('@/assets/image-optimized/model.webp', import.meta.url).href
 
 const images: CarouselImage[] = [
-  { id: '1', name: 'Ascend', url: new URL('@/assets/image/Slider_Image/Ascend.png', import.meta.url).href },
-  { id: '2', name: 'Darwisy Blur', url: new URL('@/assets/image/Slider_Image/DarwisyBlur.png', import.meta.url).href },
-  { id: '3', name: 'Evening', url: new URL('@/assets/image/Slider_Image/Evening.png', import.meta.url).href },
-  { id: '4', name: 'Girl Green', url: new URL('@/assets/image/Slider_Image/GirlGreen.png', import.meta.url).href },
-  { id: '5', name: 'House', url: new URL('@/assets/image/Slider_Image/House.png', import.meta.url).href },
-  { id: '6', name: 'Water Frog', url: new URL('@/assets/image/Slider_Image/WaterFrog.png', import.meta.url).href },
-  { id: '7', name: 'Waiting', url: new URL('@/assets/image/Slider_Image/Waiting.png', import.meta.url).href },
-  { id: '8', name: 'Music', url: new URL('@/assets/image/Slider_Image/Music.png', import.meta.url).href },
+  { id: '1', name: 'Ascend', url: new URL('@/assets/image-optimized/Slider_Image/Ascend.webp', import.meta.url).href },
+  { id: '2', name: 'Darwisy Blur', url: new URL('@/assets/image-optimized/Slider_Image/DarwisyBlur.webp', import.meta.url).href },
+  { id: '3', name: 'Evening', url: new URL('@/assets/image-optimized/Slider_Image/Evening.webp', import.meta.url).href },
+  { id: '4', name: 'Girl Green', url: new URL('@/assets/image-optimized/Slider_Image/GirlGreen.webp', import.meta.url).href },
+  { id: '5', name: 'House', url: new URL('@/assets/image-optimized/Slider_Image/House.webp', import.meta.url).href },
+  { id: '6', name: 'Water Frog', url: new URL('@/assets/image-optimized/Slider_Image/WaterFrog.webp', import.meta.url).href },
+  { id: '7', name: 'Waiting', url: new URL('@/assets/image-optimized/Slider_Image/Waiting.webp', import.meta.url).href },
+  { id: '8', name: 'Music', url: new URL('@/assets/image-optimized/Slider_Image/Music.webp', import.meta.url).href },
 ]
 </script>
 
@@ -29,7 +29,7 @@ const images: CarouselImage[] = [
             </h2>
         </div>
         
-        <img :src="modelImage" alt="Model" class="design-model" />
+        <img :src="modelImage" alt="Model" loading="lazy" decoding="async" class="design-model" />
 
         <div class="image-3d-carousel" :style="{ '--quantity': images.length }">
           <div
@@ -38,7 +38,7 @@ const images: CarouselImage[] = [
             class="image-3d-carousel__item"
             :style="{ '--position': index + 1 }"
           >
-            <img :src="img.url" :alt="img.name" />
+            <img :src="img.url" :alt="img.name" loading="lazy" decoding="async" />
           </div>
         </div>
 

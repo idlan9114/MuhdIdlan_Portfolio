@@ -28,7 +28,7 @@ withDefaults(
       </h1>
 
       <div class="mx-auto mb-12 max-w-xs overflow-hidden rounded-2xl shadow-lg">
-        <img :src="image" :alt="title" class="h-auto w-full object-cover" />
+        <img :src="image" :alt="title" decoding="async" class="h-auto w-full object-cover" />
       </div>
       <div
         class="mb-12 grid gap-8"
@@ -44,7 +44,7 @@ withDefaults(
           class="overflow-hidden rounded-2xl shadow-lg"
           :class="index === 0 ? '' : 'md:order-first'"
         >
-          <img :src="photo" :alt="`${title} screenshot ${index + 1}`" class="h-full w-full object-cover" />
+          <img :src="photo" :alt="`${title} screenshot ${index + 1}`" loading="lazy" decoding="async" class="h-full w-full object-cover" />
         </div>
       </div>
 

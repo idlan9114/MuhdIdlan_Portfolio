@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const imageModules = import.meta.glob('@/assets/image/Slider_Image/*.png', {
+const imageModules = import.meta.glob('@/assets/image-optimized/Slider_Image/*.webp', {
   eager: true,
   import: 'default'
 }) as Record<string, string>
@@ -14,7 +14,7 @@ const titleize = (fileName: string) =>
 
 const items = Object.entries(imageModules)
   .map(([path, url]) => {
-    const fileName = path.split('/').pop()?.replace(/\.png$/, '') ?? ''
+    const fileName = path.split('/').pop()?.replace(/\.webp$/, '') ?? ''
     return { title: titleize(fileName), url }
   })
   .sort((a, b) => a.title.localeCompare(b.title))
@@ -52,7 +52,7 @@ const closePreview = () => {
               transition-transform hover:scale-[1.02]"
             @click="openPreview(item)"
           >
-            <img :src="item.url" :alt="item.title" class="h-full w-full object-cover" />
+            <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="h-full w-full object-cover" />
           </div>
           <!-- <figcaption class="mt-2 text-center text-sm font-medium text-neutral-700">
             {{ item.title }}
@@ -79,6 +79,7 @@ const closePreview = () => {
           <img
             :src="activeItem.url"
             :alt="activeItem.title"
+            decoding="async"
             class="max-h-[85vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
             @click.stop
           />

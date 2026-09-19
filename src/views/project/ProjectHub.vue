@@ -41,6 +41,8 @@ const thumbFor = (label: ProjectCategory) =>
               v-if="thumbFor(category.label)"
               :src="thumbFor(category.label)!"
               :alt="category.label"
+              loading="lazy"
+              decoding="async"
               class="h-full w-full object-cover"
             />
             <div v-else class="flex h-full w-full items-center justify-center text-sm text-neutral-400">

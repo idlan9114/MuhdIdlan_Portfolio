@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const designThumb = new URL('@/assets/image/Slider_Image/Ascend.png', import.meta.url).href
-const artThumb = new URL('@/assets/image/Hobby/Drawing/Drawing (1).jpg', import.meta.url).href
+const designThumb = new URL('@/assets/image-optimized/Slider_Image/Ascend.webp', import.meta.url).href
+const artThumb = new URL('@/assets/image-optimized/Hobby/Drawing/Drawing (1).webp', import.meta.url).href
 
 const categories = [
   { label: 'Design', to: '/design/gallery', image: designThumb },
@@ -39,6 +39,8 @@ const categories = [
               v-if="category.image"
               :src="category.image"
               :alt="category.label"
+              loading="lazy"
+              decoding="async"
               class="h-full w-full object-cover"
             />
             <div v-else class="flex h-full w-full items-center justify-center text-sm text-neutral-400">

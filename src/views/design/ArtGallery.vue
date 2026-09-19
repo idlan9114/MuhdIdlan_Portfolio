@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const imageModules = import.meta.glob('@/assets/image/Hobby/Drawing/*.jpg', {
+const imageModules = import.meta.glob('@/assets/image-optimized/Hobby/Drawing/*.webp', {
   eager: true,
   import: 'default'
 }) as Record<string, string>
 
 const items = Object.entries(imageModules)
   .map(([path, url], index) => {
-    const fileName = path.split('/').pop()?.replace(/\.jpg$/, '') ?? `Drawing ${index + 1}`
+    const fileName = path.split('/').pop()?.replace(/\.webp$/, '') ?? `Drawing ${index + 1}`
     return { title: fileName, url }
   })
   .sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true }))
@@ -46,7 +46,7 @@ const closePreview = () => {
               transition-transform hover:scale-[1.02]"
             @click="openPreview(item)"
           >
-            <img :src="item.url" :alt="item.title" class="h-full w-full object-cover" />
+            <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="h-full w-full object-cover" />
           </div>
         </figure>
       </div>
@@ -70,6 +70,7 @@ const closePreview = () => {
           <img
             :src="activeItem.url"
             :alt="activeItem.title"
+            decoding="async"
             class="max-h-[85vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
             @click.stop
           />
