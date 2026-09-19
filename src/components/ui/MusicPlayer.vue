@@ -84,7 +84,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="relative inline-flex flex-col items-center lg:fixed lg:bottom-6 lg:right-12 lg:z-50">
+  <div class="fixed bottom-5 right-0 z-50 inline-flex flex-col items-center lg:bottom-6 lg:right-12">
     <iframe
       v-if="youtubeId"
       ref="iframeRef"
@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
     </button>
 
     <div
-      class="fixed bottom-5 right-0 z-50 flex items-center transition-transform duration-300 ease-out lg:hidden"
+      class="flex items-center transition-transform duration-300 ease-out lg:hidden"
       :style="{ transform: isMobileOpen ? 'translateX(0)' : 'translateX(calc(100% - 34px))' }"
       @touchstart.passive="handleTouchStart"
       @touchend.passive="handleTouchEnd"
