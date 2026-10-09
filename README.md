@@ -47,3 +47,15 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Bandwidth and image assets
+
+After adding or replacing images in `src/assets/image`, run `npm run images:webp`
+and include the generated assets in the deployment. Display images are limited to
+960px on their longest side; gallery previews use 1920px and load only when opened.
+Original source images remain available locally. The music cover uses a separate
+192px asset. The homepage video and music player load after the visitor presses play.
+
+Netlify should build with `npm run build` and publish `dist`. The generated
+`_headers` file gives hashed `/assets/*` files one year of browser caching;
+HTML retains Netlify's default caching behavior.

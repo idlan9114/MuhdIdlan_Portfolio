@@ -13,6 +13,7 @@ const props = withDefaults(
 )
 
 const isPlaying = ref(props.autoPlay)
+const playerLoaded = ref(props.autoPlay)
 const isMobileOpen = ref(false)
 const touchStartX = ref(0)
 const audioRef = ref<HTMLAudioElement | null>(null)
@@ -34,6 +35,7 @@ function sendYoutubeCommand(command: 'playVideo' | 'pauseVideo') {
 }
 
 function togglePlay() {
+  playerLoaded.value = true
   isPlaying.value = !isPlaying.value
 }
 
@@ -86,19 +88,21 @@ onBeforeUnmount(() => {
 <template>
   <div class="fixed bottom-5 right-0 z-50 inline-flex flex-col items-center lg:bottom-6 lg:right-12">
     <iframe
-      v-if="youtubeId"
+      v-if="youtubeId && playerLoaded"
       ref="iframeRef"
       class="pointer-events-none absolute h-px w-px opacity-0"
-      :src="`https://www.youtube.com/embed/${youtubeId}?enablejsapi=1&autoplay=${autoPlay ? 1 : 0}&controls=0`"
+      :src="`https://www.youtube.com/embed/${youtubeId}?enablejsapi=1&autoplay=1&controls=0`"
       allow="autoplay"
       title="Music player audio"
     />
 
     <audio
-      v-else
+      v-else-if="!youtubeId && playerLoaded"
       ref="audioRef"
       :src="src"
       class="hidden"
+      autoplay
+      preload="none"
       @ended="isPlaying = false"
     />
 

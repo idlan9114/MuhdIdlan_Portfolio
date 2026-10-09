@@ -3,6 +3,7 @@
     <nav class="container flex items-center justify-between py-3">
       <router-link :to="{ path: '/', hash: '#home' }" class="flex items-center gap-3">
         <img src="@/assets/image-optimized/Logo.webp" alt="Logo" class="w-10 h-10" />
+        <!-- <h1 class="text-center lg:text-start text-[18px] lg:text-[32px] text-black pl-4">محمد عدلن</h1> -->
       </router-link>
 
       <!-- Desktop links -->

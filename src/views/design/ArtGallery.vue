@@ -6,6 +6,11 @@ const imageModules = import.meta.glob('@/assets/image-optimized/Hobby/Drawing/*.
   import: 'default'
 }) as Record<string, string>
 
+const previewModules = import.meta.glob('@/assets/image-optimized/previews/Hobby/Drawing/*.webp', {
+  eager: true,
+  import: 'default'
+}) as Record<string, string>
+
 const items = Object.entries(imageModules)
   .map(([path, url], index) => {
     const fileName = path.split('/').pop()?.replace(/\.webp$/, '') ?? `Drawing ${index + 1}`
@@ -15,8 +20,13 @@ const items = Object.entries(imageModules)
 
 const activeItem = ref<{ title: string; url: string } | null>(null)
 
+const pathForPreview = (url: string) => {
+  const sourcePath = Object.entries(imageModules).find(([, value]) => value === url)?.[0]
+  return sourcePath?.replace('/image-optimized/', '/image-optimized/previews/') ?? ''
+}
+
 const openPreview = (item: { title: string; url: string }) => {
-  activeItem.value = item
+  activeItem.value = { ...item, url: previewModules[pathForPreview(item.url)] ?? item.url }
 }
 
 const closePreview = () => {

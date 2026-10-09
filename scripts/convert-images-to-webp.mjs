@@ -47,8 +47,29 @@ for (const imagePath of images) {
 
   await sharp(imagePath)
     .rotate()
+    .resize({ width: 960, height: 960, fit: 'inside', withoutEnlargement: true })
     .webp({ quality: 82, effort: 6 })
     .toFile(outputPath)
+
+  // Gallery cards use thumbnails; larger artwork is requested only on opening a preview.
+  const relativePath = path.relative(sourceDir, imagePath)
+  if (relativePath.startsWith(`Slider_Image${path.sep}`) || relativePath.startsWith(`Hobby${path.sep}Drawing${path.sep}`)) {
+    const previewPath = path.join(outputDir, 'previews', path.relative(outputDir, outputPath))
+    await mkdir(path.dirname(previewPath), { recursive: true })
+    await sharp(imagePath)
+      .rotate()
+      .resize({ width: 1920, height: 1920, fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: 85, effort: 6 })
+      .toFile(previewPath)
+  }
+
+  if (path.basename(imagePath, path.extname(imagePath)) === 'PR') {
+    await sharp(imagePath)
+      .rotate()
+      .resize(192, 192, { fit: 'cover' })
+      .webp({ quality: 80, effort: 6 })
+      .toFile(path.join(outputDir, 'music-cover.webp'))
+  }
 
   const [sourceInfo, outputInfo] = await Promise.all([
     stat(imagePath),
