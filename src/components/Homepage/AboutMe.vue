@@ -32,42 +32,44 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section id="about-me" class="bg-[#444343]">
-    <div class="container mx-auto py-[80px]">
+  <section id="about-me" class="relative overflow-hidden bg-[#444343]">
+    <div class="container relative mx-auto overflow-hidden py-[80px]">
+      <div class="relative z-10">
         <div>
-            <div>
+          <div>
             <h1 class="text-center text-[40px] text-white">About Me</h1>
-            </div>
+          </div>
         </div>
         <div class="flex flex-col lg:flex-row gap-8">
-            <div>
-                <div class="text-white text-[30px] mt-6 font-semibold text-center lg:text-start">
-                    Designer & <span class="text-[#B39977] font-semibold">Developer</span>
-                </div>
-                <div class="text-center lg:text-start text-white text-[16px] gap-4 mt-6 flex flex-col gap-8">
-                    <div>
-                    I am a graduated student from UMPSA in course Bachelor of Computer Science with a specialization in Graphics & Multimedia Technology. I have a strong interest in virtual reality, game development and interactive visual design with hands-on experience in transforming creative ideas into functional systems and engaging digital experiences.
-                    </div>
-                    <div>
-                    In addition to programming, I actively develop my design skills using Adobe Photoshop and Illustrator, allowing me to produce visually polished and user-focused projects. I am eager to apply my technical and creative abilities in a practical internship environment and contribute to real-world projects.
-                    </div>
-                </div>
+          <div>
+            <div class="text-white text-[30px] mt-6 font-semibold text-center lg:text-start">
+              Designer & <span class="text-[#B39977] font-semibold">Developer</span>
             </div>
-            <div>
-                <img
-                    :ref="setImageRef"
-                    src="@/assets/image-optimized/About_me.webp"
-                    alt="About Me"
-                    loading="lazy"
-                    decoding="async"
-                    class="fade-in-top object-cover rounded-full w-full h-full object-[10%_center]"
-                />
+            <div class="text-center lg:text-start text-white text-[16px] gap-4 mt-6 flex flex-col gap-8">
+              <div>
+                I am a graduated student from UMPSA in course Bachelor of Computer Science with a specialization in Graphics & Multimedia Technology. I have a strong interest in virtual reality, game development and interactive visual design with hands-on experience in transforming creative ideas into functional systems and engaging digital experiences.
+              </div>
+              <div>
+                In addition to programming, I actively develop my design skills using Adobe Photoshop and Illustrator, allowing me to produce visually polished and user-focused projects. I am eager to apply my technical and creative abilities in a practical internship environment and contribute to real-world projects.
+              </div>
             </div>
+          </div>
+          <div>
+            <img
+              :ref="setImageRef"
+              src="@/assets/image-optimized/About_me.webp"
+              alt="About Me"
+              loading="lazy"
+              decoding="async"
+              class="fade-in-top object-cover rounded-full w-full h-full object-[10%_center]"
+            />
+          </div>
         </div>
-      <div class="flex justify-center lg:justify-start">
-        <a href="#design" class="mt-12 lg:mt-6 px-8 py-2 bg-white text-[#4e4539] rounded-full hover:bg-[#b4a899] hover:text-white transition-colors">
+        <div class="flex justify-center lg:justify-start">
+          <a href="#design" class="mt-12 lg:mt-6 px-8 py-2 bg-white text-[#4e4539] rounded-full hover:bg-[#b4a899] hover:text-white transition-colors">
             My Design
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </section>

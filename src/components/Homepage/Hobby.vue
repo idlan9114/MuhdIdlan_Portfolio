@@ -7,7 +7,6 @@ interface HobbyPhoto {
   url: string
   alt: string
   class: string
-  type?: 'image' | 'video'
 }
 
 const photos: HobbyPhoto[] = [
@@ -15,7 +14,7 @@ const photos: HobbyPhoto[] = [
   { id: '2', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (10).webp', import.meta.url).href, alt: 'Darwisy Blur', class: 'col-span-1 row-span-2' },
   { id: '3', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (6).webp', import.meta.url).href, alt: 'Self', class: 'col-span-1 row-span-1' },
   { id: '4', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (1).webp', import.meta.url).href, alt: 'Evening', class: 'col-span-1 row-span-2' },
-  { id: '5', url: new URL('@/assets/image/Hobby/Hiking/Dance.MP4', import.meta.url).href, alt: 'Draw15', class: 'col-span-1 row-span-1', type: 'video' },
+  { id: '5', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (7).webp', import.meta.url).href, alt: 'Hike7', class: 'col-span-1 row-span-1' },
   { id: '6', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (9).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-2 row-span-2' },
   { id: '7', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (11).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
   { id: '8', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (12).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
@@ -72,19 +71,7 @@ onBeforeUnmount(() => {
           :class="['middle-in overflow-hidden', photo.class]"
           :style="{ transitionDelay: `${index * STAGGER_MS}ms` }"
         >
-          <video
-            v-if="photo.type === 'video'"
-            :src="photo.url"
-            :aria-label="photo.alt"
-            class="h-full w-full object-cover transition duration-300 ease-in-out hover:scale-[1.05]"
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="metadata"
-          />
           <img
-            v-else
             :src="photo.url"
             :alt="photo.alt"
             loading="lazy"

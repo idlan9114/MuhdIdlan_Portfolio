@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomeView from '@/views/HomeView.vue'
-import DesignHub from '@/views/design/DesignHub.vue'
-import DesignGallery from '@/views/design/DesignGallery.vue'
-import ArtGallery from '@/views/design/ArtGallery.vue'
-import WebsiteGallery from '@/views/design/WebsiteGallery.vue'
-import ProjectHub from '@/views/project/ProjectHub.vue'
-import ProjectCategory from '@/views/project/ProjectCategory.vue'
-import VRFarming from '@/components/Projects/VRFarming.vue'
-import MemoirOfMalaya from '@/components/Projects/MemoirOfMalaya.vue'
-import NamelessTemple from '@/components/Projects/NamelessTemple.vue'
-import PejuangSlime from '@/components/Projects/PejuangSlime.vue'
-import Pano2VrUmpsa from '@/components/Projects/Pano2VrUmpsa.vue'
-import FKParkManagementSystem from '@/components/Projects/FKParkManagementSystem.vue'
+const HomeView = () => import('@/views/HomeView.vue')
+const DesignHub = () => import('@/views/design/DesignHub.vue')
+const DesignGallery = () => import('@/views/design/DesignGallery.vue')
+const ArtGallery = () => import('@/views/design/ArtGallery.vue')
+const WebsiteGallery = () => import('@/views/design/WebsiteGallery.vue')
+const ProjectHub = () => import('@/views/project/ProjectHub.vue')
+const ProjectCategory = () => import('@/views/project/ProjectCategory.vue')
+const VRFarming = () => import('@/components/Projects/VRFarming.vue')
+const MemoirOfMalaya = () => import('@/components/Projects/MemoirOfMalaya.vue')
+const NamelessTemple = () => import('@/components/Projects/NamelessTemple.vue')
+const PejuangSlime = () => import('@/components/Projects/PejuangSlime.vue')
+const Pano2VrUmpsa = () => import('@/components/Projects/Pano2VrUmpsa.vue')
+const FKParkManagementSystem = () => import('@/components/Projects/FKParkManagementSystem.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

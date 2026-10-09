@@ -12,6 +12,11 @@ const titleize = (fileName: string) =>
     .replace(/([a-z])([A-Z])/g, '$1 $2')
     .trim()
 
+const previewModules = import.meta.glob('@/assets/image-optimized/previews/Slider_Image/*.webp', {
+  eager: true,
+  import: 'default'
+}) as Record<string, string>
+
 const items = Object.entries(imageModules)
   .map(([path, url]) => {
     const fileName = path.split('/').pop()?.replace(/\.webp$/, '') ?? ''
@@ -21,8 +26,13 @@ const items = Object.entries(imageModules)
 
 const activeItem = ref<{ title: string; url: string } | null>(null)
 
+const pathForPreview = (url: string) => {
+  const sourcePath = Object.entries(imageModules).find(([, value]) => value === url)?.[0]
+  return sourcePath?.replace('/image-optimized/', '/image-optimized/previews/') ?? ''
+}
+
 const openPreview = (item: { title: string; url: string }) => {
-  activeItem.value = item
+  activeItem.value = { ...item, url: previewModules[pathForPreview(item.url)] ?? item.url }
 }
 
 const closePreview = () => {

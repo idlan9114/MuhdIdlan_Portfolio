@@ -22,11 +22,27 @@ function fullReloadOnVueChange(): Plugin {
   }
 }
 
+function serveDecapAdminIndex(): Plugin {
+  return {
+    name: 'serve-decap-admin-index',
+    configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        if (req.url === '/admin' || req.url === '/admin/') {
+          req.url = '/admin/index.html'
+        }
+
+        next()
+      })
+    },
+  }
+}
+
 export default defineConfig({
   plugins: [
     vue(),
     tailwindcss(),
     fullReloadOnVueChange(),
+    serveDecapAdminIndex(),
   ],
   server: {
     host: '127.0.0.1',
