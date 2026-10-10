@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const designThumb = new URL('@/assets/image-optimized/Slider_Image/Ascend.webp', import.meta.url).href
+import designContent from '@/data/design.json'
+
+const designThumb = designContent.galleryImages[0]?.url ?? null
 const artThumb = new URL('@/assets/image-optimized/Hobby/Drawing/Drawing (1).webp', import.meta.url).href
 
 const categories = [

@@ -1,0 +1,34 @@
+{
+  "heading": "Design",
+  "modelImage": "/uploads/design/model/model.webp",
+  "modelImageAlt": "Model",
+  "buttonLabel": "More Design",
+  "buttonTo": "/design",
+  "images": [
+    { "id": "1", "name": "Ascend", "url": "/uploads/design/carousel/Ascend.webp" },
+    { "id": "2", "name": "Darwisy Blur", "url": "/uploads/design/carousel/DarwisyBlur.webp" },
+    { "id": "3", "name": "Evening", "url": "/uploads/design/carousel/Evening.webp" },
+    { "id": "4", "name": "Girl Green", "url": "/uploads/design/carousel/GirlGreen.webp" },
+    { "id": "5", "name": "House", "url": "/uploads/design/carousel/House.webp" },
+    { "id": "6", "name": "Water Frog", "url": "/uploads/design/carousel/WaterFrog.webp" },
+    { "id": "7", "name": "Waiting", "url": "/uploads/design/carousel/Waiting.webp" },
+    { "id": "8", "name": "Music", "url": "/uploads/design/carousel/Music.webp" }
+  ],
+  "galleryImages": [
+    { "title": "Ascend", "url": "/uploads/design/carousel/Ascend.webp" },
+    { "title": "Darwisy Blur", "url": "/uploads/design/carousel/DarwisyBlur.webp" },
+    { "title": "Evening", "url": "/uploads/design/carousel/Evening.webp" },
+    { "title": "Girl Green", "url": "/uploads/design/carousel/GirlGreen.webp" },
+    { "title": "House", "url": "/uploads/design/carousel/House.webp" },
+    { "title": "Japanese Beautiful", "url": "/uploads/design/carousel/JapaneseBeautiful.webp" },
+    { "title": "KAYDEN", "url": "/uploads/design/carousel/KAYDEN.webp" },
+    { "title": "Koi", "url": "/uploads/design/carousel/Koi.webp" },
+    { "title": "Music", "url": "/uploads/design/carousel/Music.webp" },
+    { "title": "Oppenheimer", "url": "/uploads/design/carousel/Oppenheimer.webp" },
+    { "title": "Perspective", "url": "/uploads/design/carousel/Perspective.webp" },
+    { "title": "Practice Mindfulness", "url": "/uploads/design/carousel/Practice_Mindfulness.webp" },
+    { "title": "Run Heart", "url": "/uploads/design/carousel/RunHeart.webp" },
+    { "title": "Waiting", "url": "/uploads/design/carousel/Waiting.webp" },
+    { "title": "Water Frog", "url": "/uploads/design/carousel/WaterFrog.webp" }
+  ]
+}

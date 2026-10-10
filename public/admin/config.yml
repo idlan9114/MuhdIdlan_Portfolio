@@ -1,16 +1,442 @@
 backend:
   name: git-gateway
   branch: main
+  squash_merges: true
+
+local_backend: true
+
+publish_mode: editorial_workflow
+show_preview_links: false
 
 media_folder: public/uploads
 public_folder: /uploads
 
 collections:
-  - name: placeholder
-    label: Placeholder
-    folder: public/admin-placeholder
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home
+        file: src/data/home.json
+        format: json
+        preview_path: /
+        media_folder: /public/uploads/home
+        public_folder: /uploads/home
+        fields:
+          - label: Name
+            name: name
+            widget: string
+          - label: Profile Image
+            name: profileImage
+            widget: image
+            media_folder: /public/uploads/home
+            public_folder: /uploads/home
+            default: /uploads/home/Self.webp
+          - label: Profile Image Alt Text
+            name: profileImageAlt
+            widget: string
+            default: Profile Picture
+          - label: Roles
+            name: roles
+            widget: list
+            field:
+              label: Role
+              name: role
+              widget: string
+          - label: Description
+            name: description
+            widget: text
+          - label: Resume Button Label
+            name: resumeLabel
+            widget: string
+            default: Download CV
+          - label: Resume File
+            name: resumeFile
+            widget: file
+            media_folder: /public/uploads/home/resume
+            public_folder: /uploads/home/resume
+            default: /uploads/home/resume/MuhammadIdlanBinIdris_Resume.pdf
+          - label: Resume Download Name
+            name: resumeDownloadName
+            widget: string
+            default: MuhammadIdlanBinIdris_Resume.pdf
+          - label: Resume Icon
+            name: resumeIcon
+            widget: image
+            media_folder: /public/uploads/home
+            public_folder: /uploads/home
+            default: /uploads/home/cv.webp
+          - label: Meta Text
+            name: metaText
+            widget: string
+            default: 23 years old, from Malaysia
+          - label: Social Links
+            name: socialLinks
+            widget: list
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: Icon
+                name: icon
+                widget: image
+                media_folder: /public/uploads/home/icons
+                public_folder: /uploads/home/icons
+              - label: URL
+                name: href
+                widget: string
+      - name: about
+        label: About
+        file: src/data/about.json
+        format: json
+        media_folder: /public/uploads/about
+        public_folder: /uploads/about
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Headline
+            name: headline
+            widget: object
+            fields:
+              - label: Prefix
+                name: prefix
+                widget: string
+              - label: Highlight
+                name: highlight
+                widget: string
+          - label: Paragraphs
+            name: paragraphs
+            widget: list
+            field:
+              label: Paragraph
+              name: paragraph
+              widget: text
+          - label: Image
+            name: image
+            widget: image
+            media_folder: /public/uploads/about
+            public_folder: /uploads/about
+          - label: Image Alt Text
+            name: imageAlt
+            widget: string
+          - label: Button Label
+            name: buttonLabel
+            widget: string
+          - label: Button Link
+            name: buttonHref
+            widget: string
+      - name: skills
+        label: Skills
+        file: src/data/skills.json
+        format: json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+          - label: Skill Groups
+            name: groups
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Icon
+                name: icon
+                widget: string
+                required: false
+              - label: Accent Class
+                name: accent
+                widget: string
+              - label: Items
+                name: items
+                widget: list
+                field:
+                  label: Skill
+                  name: skill
+                  widget: string
+      - name: hobby
+        label: Hobby
+        file: src/data/hobby.json
+        format: json
+        media_folder: /public/uploads/hobby
+        public_folder: /uploads/hobby
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Kicker Lines
+            name: kickerLines
+            widget: list
+            field:
+              label: Line
+              name: line
+              widget: string
+          - label: Photos
+            name: photos
+            widget: list
+            fields:
+              - label: ID
+                name: id
+                widget: string
+              - label: Image
+                name: url
+                widget: image
+                media_folder: /public/uploads/hobby/hiking
+                public_folder: /uploads/hobby/hiking
+              - label: Alt Text
+                name: alt
+                widget: string
+              - label: Grid Class
+                name: class
+                widget: string
+      - name: design
+        label: Design
+        file: src/data/design.json
+        format: json
+        media_folder: /public/uploads/design
+        public_folder: /uploads/design
+        fields:
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Model Image
+            name: modelImage
+            widget: image
+            media_folder: /public/uploads/design/model
+            public_folder: /uploads/design/model
+          - label: Model Image Alt Text
+            name: modelImageAlt
+            widget: string
+          - label: Button Label
+            name: buttonLabel
+            widget: string
+          - label: Button Route
+            name: buttonTo
+            widget: string
+          - label: Homepage Carousel Images
+            name: images
+            widget: list
+            fields:
+              - label: ID
+                name: id
+                widget: string
+              - label: Name
+                name: name
+                widget: string
+              - label: Image
+                name: url
+                widget: image
+                media_folder: /public/uploads/design/carousel
+                public_folder: /uploads/design/carousel
+          - label: Gallery Images
+            name: galleryImages
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Image
+                name: url
+                widget: image
+                media_folder: /public/uploads/design/carousel
+                public_folder: /uploads/design/carousel
+      - name: projects
+        label: Projects
+        file: src/data/projects.json
+        format: json
+        media_folder: /public/uploads/projects
+        public_folder: /uploads/projects
+        fields:
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - label: ID
+                name: id
+                widget: string
+              - label: Slug
+                name: slug
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Image
+                name: image
+                widget: image
+                media_folder: /public/uploads/projects
+                public_folder: /uploads/projects
+              - label: Link
+                name: link
+                widget: string
+              - label: Category
+                name: category
+                widget: select
+                options:
+                  - Website
+                  - Game
+                  - VR
+              - label: Project Page
+                name: projectPageSlug
+                widget: relation
+                required: false
+                collection: project_pages
+                search_fields:
+                  - title
+                  - slug
+                display_fields:
+                  - title
+                  - slug
+                value_field: slug
+                hint: Choose a page from the Project Pages collection. Leave empty to use the external Link field.
+      - name: contact
+        label: Contact
+        file: src/data/contact.json
+        format: json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+          - label: Email
+            name: email
+            widget: string
+          - label: Fields
+            name: fields
+            widget: object
+            fields:
+              - label: Name Label
+                name: nameLabel
+                widget: string
+              - label: Name Placeholder
+                name: namePlaceholder
+                widget: string
+              - label: Email Label
+                name: emailLabel
+                widget: string
+              - label: Email Placeholder
+                name: emailPlaceholder
+                widget: string
+              - label: Message Label
+                name: messageLabel
+                widget: string
+              - label: Message Placeholder
+                name: messagePlaceholder
+                widget: string
+          - label: Submit Label
+            name: submitLabel
+            widget: string
+          - label: Privacy Note
+            name: privacyNote
+            widget: string
+          - label: Sending Label
+            name: sendingLabel
+            widget: string
+          - label: Success Message
+            name: successMessage
+            widget: string
+          - label: Error Message
+            name: errorMessage
+            widget: string
+          - label: Copied Label
+            name: copiedLabel
+            widget: string
+      - name: privacy
+        label: Privacy Policy
+        file: src/data/privacy.json
+        format: json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Last Updated
+            name: lastUpdated
+            widget: string
+          - label: Intro
+            name: intro
+            widget: text
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - label: Heading
+                name: heading
+                widget: string
+              - label: Body
+                name: body
+                widget: text
+  - name: components
+    label: Components
+    files:
+      - name: logo_carousel
+        label: Logo Carousel
+        file: src/data/components.json
+        format: json
+        media_folder: /public/uploads/home/logos
+        public_folder: /uploads/home/logos
+        fields:
+          - label: Logos
+            name: logoCarousel
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: Logo Image
+                name: image
+                widget: image
+                media_folder: /public/uploads/home/logos
+                public_folder: /uploads/home/logos
+              - label: Alt Text
+                name: alt
+                widget: string
+                default: Logo
+  - name: project_pages
+    label: Project Pages
+    label_singular: Project Page
+    folder: src/data/project-pages
     create: true
+    extension: json
+    format: json
+    identifier_field: title
+    slug: "{{slug}}"
+    media_folder: /public/uploads/projects
+    public_folder: /uploads/projects
     fields:
+      - label: Slug
+        name: slug
+        widget: string
+        hint: This creates /projects/your-slug. Use lowercase words separated by hyphens.
       - label: Title
         name: title
         widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: Cover Image
+        name: image
+        widget: image
+        media_folder: /public/uploads/projects
+        public_folder: /uploads/projects
+      - label: External Link
+        name: link
+        widget: string
+      - label: Gallery Images
+        name: gallery
+        widget: list
+        required: false
+        field:
+          label: Image
+          name: image
+          widget: image
+          media_folder: /public/uploads/projects
+          public_folder: /uploads/projects

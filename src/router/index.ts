@@ -7,12 +7,8 @@ const ArtGallery = () => import('@/views/design/ArtGallery.vue')
 const WebsiteGallery = () => import('@/views/design/WebsiteGallery.vue')
 const ProjectHub = () => import('@/views/project/ProjectHub.vue')
 const ProjectCategory = () => import('@/views/project/ProjectCategory.vue')
-const VRFarming = () => import('@/components/Projects/VRFarming.vue')
-const MemoirOfMalaya = () => import('@/components/Projects/MemoirOfMalaya.vue')
-const NamelessTemple = () => import('@/components/Projects/NamelessTemple.vue')
-const PejuangSlime = () => import('@/components/Projects/PejuangSlime.vue')
-const Pano2VrUmpsa = () => import('@/components/Projects/Pano2VrUmpsa.vue')
-const FKParkManagementSystem = () => import('@/components/Projects/FKParkManagementSystem.vue')
+const ProjectPage = () => import('@/views/project/ProjectPage.vue')
+const PrivacyPolicy = () => import('@/views/PrivacyPolicy.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,16 +20,8 @@ const router = createRouter({
     { path: '/design/website', name: 'design-website', component: WebsiteGallery },
     { path: '/project', name: 'project-hub', component: ProjectHub },
     { path: '/project/:category', name: 'project-category', component: ProjectCategory },
-    { path: '/projects/vr-farming', name: 'vr-farming', component: VRFarming },
-    { path: '/projects/memoir-of-malaya', name: 'memoir-of-malaya', component: MemoirOfMalaya },
-    { path: '/projects/nameless-temple', name: 'nameless-temple', component: NamelessTemple },
-    { path: '/projects/pejuang-slime', name: 'pejuang-slime', component: PejuangSlime },
-    { path: '/projects/pano2vr-umpsa', name: 'pano2vr-umpsa', component: Pano2VrUmpsa },
-    {
-      path: '/projects/fk-park-management-system',
-      name: 'fk-park-management-system',
-      component: FKParkManagementSystem
-    }
+    { path: '/projects/:slug', name: 'project-page', component: ProjectPage },
+    { path: '/privacy-policy', name: 'privacy-policy', component: PrivacyPolicy }
   ],
   scrollBehavior(to, _from, savedPosition) {
     if (to.hash) {

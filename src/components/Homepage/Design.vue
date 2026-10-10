@@ -1,22 +1,5 @@
 <script setup lang="ts">
-interface CarouselImage {
-  id: string
-  name: string
-  url: string
-}
-
-const modelImage = new URL('@/assets/image-optimized/model.webp', import.meta.url).href
-
-const images: CarouselImage[] = [
-  { id: '1', name: 'Ascend', url: new URL('@/assets/image-optimized/Slider_Image/Ascend.webp', import.meta.url).href },
-  { id: '2', name: 'Darwisy Blur', url: new URL('@/assets/image-optimized/Slider_Image/DarwisyBlur.webp', import.meta.url).href },
-  { id: '3', name: 'Evening', url: new URL('@/assets/image-optimized/Slider_Image/Evening.webp', import.meta.url).href },
-  { id: '4', name: 'Girl Green', url: new URL('@/assets/image-optimized/Slider_Image/GirlGreen.webp', import.meta.url).href },
-  { id: '5', name: 'House', url: new URL('@/assets/image-optimized/Slider_Image/House.webp', import.meta.url).href },
-  { id: '6', name: 'Water Frog', url: new URL('@/assets/image-optimized/Slider_Image/WaterFrog.webp', import.meta.url).href },
-  { id: '7', name: 'Waiting', url: new URL('@/assets/image-optimized/Slider_Image/Waiting.webp', import.meta.url).href },
-  { id: '8', name: 'Music', url: new URL('@/assets/image-optimized/Slider_Image/Music.webp', import.meta.url).href },
-]
+import designContent from '@/data/design.json'
 </script>
 
 <template>
@@ -25,15 +8,15 @@ const images: CarouselImage[] = [
       <div class="relative h-[30rem] w-full">
         <div class="relative z-20 text-center -top-18 lg:absolute lg:top-auto lg:bottom-0 lg:left-0 lg:text-left lg:w-auto w-full mt-4 lg:mt-0">
             <h2 class="design-heading text-[50px] lg:text-[100px] font-sans">
-                Design
+                {{ designContent.heading }}
             </h2>
         </div>
         
-        <img :src="modelImage" alt="Model" loading="lazy" decoding="async" class="design-model" />
+        <img :src="designContent.modelImage" :alt="designContent.modelImageAlt" loading="lazy" decoding="async" class="design-model" />
 
-        <div class="image-3d-carousel" :style="{ '--quantity': images.length }">
+        <div class="image-3d-carousel" :style="{ '--quantity': designContent.images.length }">
           <div
-            v-for="(img, index) in images"
+            v-for="(img, index) in designContent.images"
             :key="img.id"
             class="image-3d-carousel__item"
             :style="{ '--position': index + 1 }"
@@ -43,10 +26,10 @@ const images: CarouselImage[] = [
         </div>
 
         <router-link
-          to="/design"
+          :to="designContent.buttonTo"
           class="absolute left-1/2 -bottom-8 z-10 border border-white -translate-x-1/2 rounded-full bg-[#4e4539] px-8 py-3 text-sm font-semibold text-white shadow-[0_18px_32px_rgba(0,0,0,0.14)] transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-[#5e5850] cursor-pointer lg:left-auto lg:translate-x-0 lg:right-0 lg:bottom-0"
         >
-          More Design
+          {{ designContent.buttonLabel }}
         </router-link>
       </div>
     </div>

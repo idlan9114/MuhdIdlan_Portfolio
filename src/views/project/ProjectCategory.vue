@@ -19,8 +19,8 @@ const items = computed(() =>
 )
 
 const goToProject = (project: Project) => {
-  if (project.hasPage) {
-    router.push(`/projects/${project.slug}`)
+  if (project.pagePath) {
+    router.push(project.pagePath)
     return
   }
 

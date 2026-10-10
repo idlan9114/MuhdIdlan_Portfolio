@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:all": "run-p \"dev -- --host 0.0.0.0\" cms:proxy",
+    "cms:proxy": "npx decap-server",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",

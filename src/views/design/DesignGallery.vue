@@ -1,38 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import designContent from '@/data/design.json'
 
-const imageModules = import.meta.glob('@/assets/image-optimized/Slider_Image/*.webp', {
-  eager: true,
-  import: 'default'
-}) as Record<string, string>
-
-const titleize = (fileName: string) =>
-  fileName
-    .replace(/_/g, ' ')
-    .replace(/([a-z])([A-Z])/g, '$1 $2')
-    .trim()
-
-const previewModules = import.meta.glob('@/assets/image-optimized/previews/Slider_Image/*.webp', {
-  eager: true,
-  import: 'default'
-}) as Record<string, string>
-
-const items = Object.entries(imageModules)
-  .map(([path, url]) => {
-    const fileName = path.split('/').pop()?.replace(/\.webp$/, '') ?? ''
-    return { title: titleize(fileName), url }
-  })
+const items = designContent.galleryImages
   .sort((a, b) => a.title.localeCompare(b.title))
 
 const activeItem = ref<{ title: string; url: string } | null>(null)
 
-const pathForPreview = (url: string) => {
-  const sourcePath = Object.entries(imageModules).find(([, value]) => value === url)?.[0]
-  return sourcePath?.replace('/image-optimized/', '/image-optimized/previews/') ?? ''
-}
-
 const openPreview = (item: { title: string; url: string }) => {
-  activeItem.value = { ...item, url: previewModules[pathForPreview(item.url)] ?? item.url }
+  activeItem.value = item
 }
 
 const closePreview = () => {

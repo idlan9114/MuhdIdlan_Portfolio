@@ -1,0 +1,14 @@
+{
+  "title": "Hobbies",
+  "kickerLines": ["When I'm Not", "Coding Or", "Designing"],
+  "photos": [
+    { "id": "1", "url": "/uploads/hobby/hiking/Hike-2.webp", "alt": "Hike1", "class": "col-span-2 row-span-2" },
+    { "id": "2", "url": "/uploads/hobby/hiking/Hike-10.webp", "alt": "Darwisy Blur", "class": "col-span-1 row-span-2" },
+    { "id": "3", "url": "/uploads/hobby/hiking/Hike-6.webp", "alt": "Self", "class": "col-span-1 row-span-1" },
+    { "id": "4", "url": "/uploads/hobby/hiking/Hike-1.webp", "alt": "Evening", "class": "col-span-1 row-span-2" },
+    { "id": "5", "url": "/uploads/hobby/hiking/Hike-7.webp", "alt": "Hike7", "class": "col-span-1 row-span-1" },
+    { "id": "6", "url": "/uploads/hobby/hiking/Hike-9.webp", "alt": "Hike8", "class": "col-span-2 row-span-2" },
+    { "id": "7", "url": "/uploads/hobby/hiking/Hike-11.webp", "alt": "Hike8", "class": "col-span-1 row-span-1" },
+    { "id": "8", "url": "/uploads/hobby/hiking/Hike-12.webp", "alt": "Hike8", "class": "col-span-1 row-span-1" }
+  ]
+}

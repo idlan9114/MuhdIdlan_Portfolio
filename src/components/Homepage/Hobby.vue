@@ -1,24 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, type ComponentPublicInstance } from 'vue'
+import hobbyContent from '@/data/hobby.json'
 import '@/assets/css/middle-in.css'
-
-interface HobbyPhoto {
-  id: string
-  url: string
-  alt: string
-  class: string
-}
-
-const photos: HobbyPhoto[] = [
-  { id: '1', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (2).webp', import.meta.url).href, alt: 'Hike1', class: 'col-span-2 row-span-2' },
-  { id: '2', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (10).webp', import.meta.url).href, alt: 'Darwisy Blur', class: 'col-span-1 row-span-2' },
-  { id: '3', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (6).webp', import.meta.url).href, alt: 'Self', class: 'col-span-1 row-span-1' },
-  { id: '4', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (1).webp', import.meta.url).href, alt: 'Evening', class: 'col-span-1 row-span-2' },
-  { id: '5', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (7).webp', import.meta.url).href, alt: 'Hike7', class: 'col-span-1 row-span-1' },
-  { id: '6', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (9).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-2 row-span-2' },
-  { id: '7', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (11).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
-  { id: '8', url: new URL('@/assets/image-optimized/Hobby/Hiking/Hike (12).webp', import.meta.url).href, alt: 'Hike8', class: 'col-span-1 row-span-1' },
-]
 
 const STAGGER_MS = 150
 
@@ -39,7 +22,7 @@ onMounted(() => {
         }
       }
     },
-    { threshold: 0.2 }
+    { threshold: 0.2 },
   )
 
   cardEls.forEach(el => observer?.observe(el))
@@ -55,17 +38,17 @@ onBeforeUnmount(() => {
   <section id="hobby" class="bg-black py-20">
     <div class="container mx-auto">
       <div class="mb-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-        <h1 class="text-center text-[40px] font-sans text-white">Hobbies</h1>
+        <h1 class="text-center text-[40px] font-sans text-white">{{ hobbyContent.title }}</h1>
         <div class="hidden lg:flex flex-col items-end text-right text-white/70 text-[16px] uppercase tracking-[0.2em]">
-          <span>When I'm Not</span>
-          <span>Coding Or</span>
-          <span class="text-[#B39977]">Designing</span>
+          <span>{{ hobbyContent.kickerLines[0] }}</span>
+          <span>{{ hobbyContent.kickerLines[1] }}</span>
+          <span class="text-[#B39977]">{{ hobbyContent.kickerLines[2] }}</span>
         </div>
       </div>
 
       <div class="grid grid-cols-2 lg:grid-cols-4 auto-rows-[140px] lg:auto-rows-[160px] grid-flow-dense gap-4">
         <div
-          v-for="(photo, index) in photos"
+          v-for="(photo, index) in hobbyContent.photos"
           :key="photo.id"
           :ref="setCardRef"
           :class="['middle-in overflow-hidden', photo.class]"

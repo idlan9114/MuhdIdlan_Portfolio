@@ -146,8 +146,8 @@ const handleTouchEnd = (event: TouchEvent) => {
 }
 
 const goToProject = (project: Project) => {
-  if (project.hasPage) {
-    router.push(`/projects/${project.slug}`)
+  if (project.pagePath) {
+    router.push(project.pagePath)
     return
   }
 
@@ -219,7 +219,7 @@ onUnmounted(() => {
                   <button
                     @click="goToProject(project)"
                     class="w-full rounded-lg bg-black px-4 py-2 font-medium text-white
-                      transition-colors duration-200 hover:bg-gray-800"
+                      transition-colors duration-200 hover:bg-gray-800 cursor-pointer"
                   >
                     View Project Page
                   </button>
