@@ -1,0 +1,24 @@
+{
+  "title": "Skills",
+  "subtitle": "A combination of programming, game development, and visual design skills",
+  "groups": [
+    {
+      "title": "Programming & Web",
+      "icon": "",
+      "accent": "text-[#3dd7d0]",
+      "items": ["HTML", "CSS", "JavaScript", "PHP", "Java", "Vue.js", "Tailwind CSS"]
+    },
+    {
+      "title": "Game & 3D",
+      "icon": "",
+      "accent": "text-[#3dd7d0]",
+      "items": ["Unity 3D", "C# Scripting", "Unity Game Engine", "Blender"]
+    },
+    {
+      "title": "Design & Illustration",
+      "icon": "",
+      "accent": "text-[#3dd7d0]",
+      "items": ["Graphic Design", "Illustration", "Adobe Photoshop", "Adobe Illustrator", "Procreate"]
+    }
+  ]
+}

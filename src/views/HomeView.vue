@@ -6,6 +6,7 @@ import Hobby from '@/components/Homepage/Hobby.vue'
 import Design from '@/components/Homepage/Design.vue'
 import Project from '@/components/Homepage/Project.vue'
 import Contact from '@/components/Homepage/Contact.vue'
+import Carousel from '@/components/CarouselLogo.vue'
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import Contact from '@/components/Homepage/Contact.vue'
     <Skills />
     <Hobby />
     <Design />
+    <!-- <Carousel /> -->
     <Project />
     <Contact />
   </div>

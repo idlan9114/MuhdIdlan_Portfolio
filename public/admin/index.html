@@ -4,9 +4,163 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Admin</title>
+    <style>
+      [class*='QuickAdd'],
+      [aria-label='Quick add'],
+      button[title='Quick add'] {
+        display: none !important;
+      }
+    </style>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="/admin/folder-media-library.js"></script>
+    <script>
+      const hideQuickAdd = () => {
+        document.querySelectorAll('button').forEach(button => {
+          if (button.textContent && button.textContent.trim().startsWith('Quick add')) {
+            button.style.display = 'none'
+          }
+        })
+      }
+
+      hideQuickAdd()
+      new MutationObserver(hideQuickAdd).observe(document.body, {
+        childList: true,
+        subtree: true,
+      })
+
+      CMS.registerPreviewStyle(`
+        body {
+          margin: 0;
+          background: #ecebeb;
+          color: #111;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .home-preview {
+          box-sizing: border-box;
+          display: grid;
+          grid-template-columns: minmax(240px, 1fr) minmax(280px, 1fr);
+          gap: 48px;
+          min-height: 100vh;
+          padding: 48px;
+          align-items: center;
+        }
+
+        .home-preview__image {
+          width: 100%;
+          aspect-ratio: 1.24;
+          object-fit: cover;
+          border-radius: 56px;
+          background: #111;
+        }
+
+        .home-preview__name {
+          margin: 0 0 24px;
+          font-size: 72px;
+          line-height: 1.05;
+          font-weight: 800;
+        }
+
+        .home-preview__roles {
+          display: flex;
+          align-items: baseline;
+          gap: 14px;
+          margin-bottom: 24px;
+          font-size: 24px;
+        }
+
+        .home-preview__role {
+          color: #665d51;
+          font-weight: 700;
+        }
+
+        .home-preview__description {
+          max-width: 640px;
+          margin: 0 0 56px;
+          font-size: 16px;
+          line-height: 1.55;
+        }
+
+        .home-preview__footer {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+        }
+
+        .home-preview__button {
+          border-radius: 999px;
+          background: #4e4539;
+          color: #fff;
+          padding: 10px 24px;
+          font-size: 16px;
+        }
+
+        .home-preview__meta {
+          font-size: 16px;
+        }
+
+        @media (max-width: 860px) {
+          .home-preview {
+            grid-template-columns: 1fr;
+            padding: 24px;
+          }
+
+          .home-preview__name {
+            font-size: 42px;
+            text-align: center;
+          }
+
+          .home-preview__roles,
+          .home-preview__description,
+          .home-preview__footer {
+            justify-content: center;
+            text-align: center;
+          }
+        }
+      `, { raw: true });
+
+      var HomePreview = createClass({
+        render: function () {
+          var entry = this.props.entry;
+          var data = entry.get('data');
+          var name = data.get('name') || '';
+          var description = data.get('description') || '';
+          var resumeLabel = data.get('resumeLabel') || '';
+          var metaText = data.get('metaText') || '';
+          var image = data.get('profileImage');
+          var imageAlt = data.get('profileImageAlt') || 'Profile image';
+          var roles = data.get('roles');
+          var firstRole = roles && roles.size ? roles.get(0) : '';
+          var imageUrl = image ? this.props.getAsset(image).toString() : '';
+
+          return h('main', { className: 'home-preview' },
+            h('section', {},
+              imageUrl
+                ? h('img', { className: 'home-preview__image', src: imageUrl, alt: imageAlt })
+                : h('div', { className: 'home-preview__image' })
+            ),
+            h('section', {},
+              h('h1', { className: 'home-preview__name' }, name),
+              h('div', { className: 'home-preview__roles' },
+                h('span', {}, 'I am'),
+                h('span', { className: 'home-preview__role' }, firstRole)
+              ),
+              h('p', { className: 'home-preview__description' }, description),
+              h('div', { className: 'home-preview__footer' },
+                h('span', { className: 'home-preview__button' }, resumeLabel),
+                h('span', { className: 'home-preview__meta' }, metaText)
+              )
+            )
+          );
+        }
+      });
+
+      CMS.registerPreviewTemplate('home', HomePreview);
+    </script>
   </body>
 </html>

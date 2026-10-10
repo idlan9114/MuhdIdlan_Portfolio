@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, type ComponentPublicInstance } from 'vue'
+import skillsContent from '@/data/skills.json'
 import '@/assets/css/fade-in-top.css'
 
 const STAGGER_MS = 150
@@ -32,35 +33,16 @@ onBeforeUnmount(() => {
   observer = null
 })
 
-const skillGroups = [
-  {
-    title: 'Programming & Web',
-    icon: '',
-    accent: 'text-[#3dd7d0]',
-    items: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Java', 'Vue.js', 'Tailwind CSS'],
-  },
-  {
-    title: 'Game & 3D',
-    icon: '',
-    accent: 'text-[#3dd7d0]',
-    items: ['Unity 3D', 'C# Scripting', 'Unity Game Engine', 'Blender'],
-  },
-  {
-    title: 'Design & Illustration',
-    icon: '',
-    accent: 'text-[#3dd7d0]',
-    items: ['Graphic Design', 'Illustration', 'Adobe Photoshop', 'Adobe Illustrator', 'Procreate'],
-  },
-]
+const skillGroups = skillsContent.groups
 </script>
 
 <template>
   <section id="skills" class="bg-[#ecebeb] py-20">
     <div class="container mx-auto">
       <div class="mb-14 text-center">
-        <h1 class="text-center text-[40px] font-sans text-black">Skills</h1>
+        <h1 class="text-center text-[40px] font-sans text-black">{{ skillsContent.title }}</h1>
         <p class="mt-4 text-[20px] text-black">
-          A combination of programming, game development, and visual design skills
+          {{ skillsContent.subtitle }}
         </p>
       </div>
 

@@ -1,0 +1,31 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "October 10, 2026",
+  "intro": "This portfolio website is owned and managed by Muhammad Idlan. This policy explains what information may be collected when you use the website and how it is used.",
+  "sections": [
+    {
+      "heading": "Information I Collect",
+      "body": "If you use the contact form, I collect the name, email address, and message you choose to send. This website may also receive basic technical information, such as browser type or IP address, through hosting and security logs."
+    },
+    {
+      "heading": "How I Use Your Information",
+      "body": "I use contact form details only to read your message and reply to you. I do not sell your personal information or use it for unrelated marketing."
+    },
+    {
+      "heading": "Where Your Message Goes",
+      "body": "Contact form submissions may be processed by the website hosting provider and delivered to my email inbox so I can respond."
+    },
+    {
+      "heading": "Cookies and Analytics",
+      "body": "This portfolio does not intentionally use advertising cookies or marketing trackers. If analytics or embedded third-party tools are added later, this policy should be updated."
+    },
+    {
+      "heading": "Data Retention",
+      "body": "I keep messages only for as long as needed to reply, manage project conversations, or keep reasonable records."
+    },
+    {
+      "heading": "Contact",
+      "body": "If you have questions about this privacy policy, contact me at idlan9114@gmail.com."
+    }
+  ]
+}
