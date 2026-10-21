@@ -1,19 +1,9 @@
 {
-  "name": "Muhammad Idlan",
-  "profileImage": "/uploads/home/Self.webp",
-  "profileImageAlt": "Profile Picture",
-  "roles": [
-    "Illustrator",
-    "Game Developer",
-    "Web Designer",
-    "UMPSA Student"
-  ],
-  "description": "Graduate student in Bachelor of Computer Science (Graphics & Multimedia Technology) with Honours at University Malaysia Pahang. Passionate about Game Development, VR and Web Development",
-  "resumeLabel": "Download CV",
-  "resumeFile": "/uploads/home/resume/MuhammadIdlanBinIdris_Resume.pdf",
   "resumeDownloadName": "MuhammadIdlanBinIdris_Resume.pdf",
   "resumeIcon": "/uploads/home/cv.webp",
-  "metaText": "23 years old, from Malaysia",
+  "resumeLabel": "Download CV",
+  "resumeFile": "/uploads/home/resume/MuhammadIdlanBinIdris_Resume.pdf",
+  "name": "Muhammad Idlan",
   "socialLinks": [
     {
       "name": "Instagram",
@@ -35,5 +25,15 @@
       "icon": "/uploads/home/icons/github.svg",
       "href": "https://github.com/idlan9114"
     }
+  ],
+  "metaText": "23 years old, from Malaysia",
+  "profileImage": "/uploads/home/Self.webp",
+  "profileImageAlt": "Profile Picture",
+  "description": "Graduated student in Bachelor of Computer Science (Graphics & Multimedia Technology) with Honours at University Malaysia Pahang. Passionate about Game Development, VR and Web Development",
+  "roles": [
+    "Illustrator",
+    "Game Developer",
+    "Web Designer",
+    "UMPSA Student"
   ]
 }
